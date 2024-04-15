@@ -48,11 +48,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="177" height="35"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="위시 리스트 담기"/>
+                                        <connections>
+                                            <action selector="saveWishListButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OgA-PA-R2c"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQF-6p-uqk">
                                         <rect key="frame" x="197" y="0.0" width="177" height="35"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="다른 상품 보기"/>
+                                        <connections>
+                                            <action selector="showAnotherButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cAf-uu-Fk7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -66,6 +72,10 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="위시 리스트 보기"/>
+                                <connections>
+                                    <action selector="showWishListButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ExU-4x-Fsv"/>
+                                    <segue destination="9q0-SX-XQW" kind="presentation" id="jZq-ft-eOg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -92,6 +102,15 @@
                             <constraint firstItem="r29-UI-aUd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="y2s-SU-Xta"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="productDescription" destination="k1h-Du-UFg" id="yvS-Pp-Q70"/>
+                        <outlet property="productImage" destination="r29-UI-aUd" id="KX1-0G-oHY"/>
+                        <outlet property="productPrice" destination="08o-ve-gjY" id="bt6-zu-bFB"/>
+                        <outlet property="productTitle" destination="lik-Gh-KV7" id="eGM-IE-Ziu"/>
+                        <outlet property="saveWishListButton" destination="oGl-ZI-ceL" id="a6i-y4-NXw"/>
+                        <outlet property="showAnotherButton" destination="IQF-6p-uqk" id="ahy-kL-Yei"/>
+                        <outlet property="showWishListButton" destination="hTw-kJ-lj1" id="naW-hi-ybH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,13 +119,13 @@
         <!--Wish List View Controller-->
         <scene sceneID="fkl-bP-zGY">
             <objects>
-                <viewController id="9q0-SX-XQW" customClass="WishListViewController" customModule="WishList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="wishlistVC" id="9q0-SX-XQW" customClass="WishListViewController" customModule="WishList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wiP-4w-mS2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lG6-U8-pIS">
-                                <rect key="frame" x="0.0" y="58" width="414" height="794"/>
+                                <rect key="frame" x="0.0" y="10" width="414" height="866"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -119,6 +138,9 @@
                             <constraint firstItem="n4f-qi-n5Y" firstAttribute="trailing" secondItem="lG6-U8-pIS" secondAttribute="trailing" id="rtf-oK-B33"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableview" destination="lG6-U8-pIS" id="lxd-7i-QbM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXE-qe-GEx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

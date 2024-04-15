@@ -9,6 +9,10 @@ import UIKit
 
 class WishListTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var wishListLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
