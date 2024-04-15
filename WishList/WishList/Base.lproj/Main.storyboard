@@ -103,13 +103,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="productDescription" destination="k1h-Du-UFg" id="yvS-Pp-Q70"/>
-                        <outlet property="productImage" destination="r29-UI-aUd" id="KX1-0G-oHY"/>
-                        <outlet property="productPrice" destination="08o-ve-gjY" id="bt6-zu-bFB"/>
-                        <outlet property="productTitle" destination="lik-Gh-KV7" id="eGM-IE-Ziu"/>
+                        <outlet property="descriptionLabel" destination="k1h-Du-UFg" id="VFn-PD-OhM"/>
+                        <outlet property="priceLabel" destination="08o-ve-gjY" id="aVb-JC-G9z"/>
+                        <outlet property="productImage" destination="r29-UI-aUd" id="nh1-b6-OnQ"/>
                         <outlet property="saveWishListButton" destination="oGl-ZI-ceL" id="a6i-y4-NXw"/>
                         <outlet property="showAnotherButton" destination="IQF-6p-uqk" id="ahy-kL-Yei"/>
                         <outlet property="showWishListButton" destination="hTw-kJ-lj1" id="naW-hi-ybH"/>
+                        <outlet property="titleLabel" destination="lik-Gh-KV7" id="a4d-Ir-mgW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
