@@ -16,6 +16,7 @@
 		9CC4BEEC2BCD2D4D003433EA /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4BEEB2BCD2D4D003433EA /* WishListViewController.swift */; };
 		9CC4BEEF2BCD2E92003433EA /* WishListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4BEED2BCD2E92003433EA /* WishListTableViewCell.swift */; };
 		9CC4BEF02BCD2E92003433EA /* WishListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC4BEEE2BCD2E92003433EA /* WishListTableViewCell.xib */; };
+		9CC4BEF32BCD5223003433EA /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4BEF12BCD5223003433EA /* DataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9CC4BEEB2BCD2D4D003433EA /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		9CC4BEED2BCD2E92003433EA /* WishListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListTableViewCell.swift; sourceTree = "<group>"; };
 		9CC4BEEE2BCD2E92003433EA /* WishListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishListTableViewCell.xib; sourceTree = "<group>"; };
+		9CC4BEF22BCD5223003433EA /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,12 +68,13 @@
 				9CC4BED52BCD260C003433EA /* SceneDelegate.swift */,
 				9CC4BED72BCD260C003433EA /* ViewController.swift */,
 				9CC4BEEB2BCD2D4D003433EA /* WishListViewController.swift */,
+				9CC4BEED2BCD2E92003433EA /* WishListTableViewCell.swift */,
+				9CC4BEEE2BCD2E92003433EA /* WishListTableViewCell.xib */,
+				9CC4BEF12BCD5223003433EA /* DataModel.xcdatamodeld */,
 				9CC4BED92BCD260C003433EA /* Main.storyboard */,
 				9CC4BEDC2BCD260C003433EA /* Assets.xcassets */,
 				9CC4BEDE2BCD260C003433EA /* LaunchScreen.storyboard */,
 				9CC4BEE12BCD260C003433EA /* Info.plist */,
-				9CC4BEED2BCD2E92003433EA /* WishListTableViewCell.swift */,
-				9CC4BEEE2BCD2E92003433EA /* WishListTableViewCell.xib */,
 			);
 			path = WishList;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				9CC4BED82BCD260C003433EA /* ViewController.swift in Sources */,
 				9CC4BEEC2BCD2D4D003433EA /* WishListViewController.swift in Sources */,
 				9CC4BEEF2BCD2E92003433EA /* WishListTableViewCell.swift in Sources */,
+				9CC4BEF32BCD5223003433EA /* DataModel.xcdatamodeld in Sources */,
 				9CC4BED42BCD260C003433EA /* AppDelegate.swift in Sources */,
 				9CC4BED62BCD260C003433EA /* SceneDelegate.swift in Sources */,
 			);
@@ -381,6 +385,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9CC4BEF12BCD5223003433EA /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9CC4BEF22BCD5223003433EA /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 9CC4BEF22BCD5223003433EA /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9CC4BEC82BCD260C003433EA /* Project object */;
 }

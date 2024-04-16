@@ -100,9 +100,7 @@ class ViewController: UIViewController {
     
     
     private func saveWishProduct() {
-        guard let context = self.persistentContainer?.viewContext else { return }
-        
-        guard let currentProduct = self.currentProduct else { return }
+        guard let context = self.persistentContainer?.viewContext, let currentProduct = self.currentProduct else { return }
         
         let wishProduct = Product(context: context)
         
@@ -126,8 +124,7 @@ class ViewController: UIViewController {
                     } else if let data = data {
                         do {
                             // product를 디코드하여, currentProduct 변수에 담습니다.
-                            let product = try JSONDecoder().decode(RemoteProduct.self, from: data)
-                            self.currentProduct = product
+                            self.currentProduct = try JSONDecoder().decode(RemoteProduct.self, from: data)
                         } catch {
                             print("Decode Error: \(error)")
                         }

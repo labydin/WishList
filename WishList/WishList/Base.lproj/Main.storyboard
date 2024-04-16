@@ -74,7 +74,6 @@
                                 <buttonConfiguration key="configuration" style="plain" title="위시 리스트 보기"/>
                                 <connections>
                                     <action selector="showWishListButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ExU-4x-Fsv"/>
-                                    <segue destination="9q0-SX-XQW" kind="presentation" id="jZq-ft-eOg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -121,11 +120,11 @@
             <objects>
                 <viewController storyboardIdentifier="wishlistVC" id="9q0-SX-XQW" customClass="WishListViewController" customModule="WishList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wiP-4w-mS2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lG6-U8-pIS">
-                                <rect key="frame" x="0.0" y="10" width="414" height="866"/>
+                                <rect key="frame" x="0.0" y="58" width="414" height="794"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
