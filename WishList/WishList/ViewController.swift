@@ -10,16 +10,6 @@ import CoreData
 
 
 
-struct RemoteProduct: Decodable {
-    let id: Int
-    let title: String
-    let description: String
-    let price: Double
-    let thumbnail: URL
-}
-
-
-
 class ViewController: UIViewController {
     
     
@@ -55,7 +45,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    
     
     
     override func viewDidLoad() {
@@ -95,6 +84,9 @@ class ViewController: UIViewController {
     @IBAction func showWishListButtonTapped(_ sender: UIButton) {
         if let wishlistVC = self.storyboard?.instantiateViewController(withIdentifier: "wishlistVC") as? WishListViewController {
             self.present(wishlistVC, animated: true, completion: nil)
+            print(#function)
+        } else {
+            print(#function)
         }
     }
     
@@ -109,6 +101,7 @@ class ViewController: UIViewController {
         wishProduct.price = currentProduct.price
         
         try? context.save()
+        print(#function)
     }
     
     

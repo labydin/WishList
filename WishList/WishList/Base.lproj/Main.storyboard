@@ -116,34 +116,35 @@
             <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
         </scene>
         <!--Wish List View Controller-->
-        <scene sceneID="fkl-bP-zGY">
+        <scene sceneID="Wz1-Fe-oMB">
             <objects>
-                <viewController storyboardIdentifier="wishlistVC" id="9q0-SX-XQW" customClass="WishListViewController" customModule="WishList" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wiP-4w-mS2">
+                <tableViewController storyboardIdentifier="wishlistVC" id="uNV-MK-Yhv" customClass="WishListViewController" customModule="WishList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="VJd-xO-lep">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lG6-U8-pIS">
-                                <rect key="frame" x="0.0" y="58" width="414" height="794"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="n4f-qi-n5Y"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="lG6-U8-pIS" firstAttribute="top" secondItem="n4f-qi-n5Y" secondAttribute="top" constant="10" id="5wS-kB-e47"/>
-                            <constraint firstItem="n4f-qi-n5Y" firstAttribute="bottom" secondItem="lG6-U8-pIS" secondAttribute="bottom" constant="10" id="dq6-SP-mWG"/>
-                            <constraint firstItem="lG6-U8-pIS" firstAttribute="leading" secondItem="n4f-qi-n5Y" secondAttribute="leading" id="g8B-3F-rWI"/>
-                            <constraint firstItem="n4f-qi-n5Y" firstAttribute="trailing" secondItem="lG6-U8-pIS" secondAttribute="trailing" id="rtf-oK-B33"/>
-                        </constraints>
-                    </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="WishListTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="0eh-Gr-2MX" customClass="WishListTableViewCell" customModule="WishList" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="414" height="44.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0eh-Gr-2MX" id="jKC-rQ-VBV" customClass="WishListTableViewCell" customModule="WishList" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="uNV-MK-Yhv" id="QWc-8x-gzF"/>
+                            <outlet property="delegate" destination="uNV-MK-Yhv" id="FuK-Ec-tud"/>
+                        </connections>
+                    </tableView>
                     <connections>
-                        <outlet property="tableview" destination="lG6-U8-pIS" id="lxd-7i-QbM"/>
+                        <outlet property="tableview" destination="VJd-xO-lep" id="BpH-1A-3Fb"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aXE-qe-GEx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xfB-51-4j9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="980" y="-28"/>
+            <point key="canvasLocation" x="1001" y="-28"/>
         </scene>
     </scenes>
     <resources>

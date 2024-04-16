@@ -10,15 +10,6 @@ import CoreData
 
 
 
-struct Product {
-    let id: Int
-    let title: String
-    let price: Double
-    
-}
-
-
-
 class WishListViewController: UITableViewController {
 
     @IBOutlet weak var tableview: UITableView!
@@ -35,6 +26,7 @@ class WishListViewController: UITableViewController {
 
         self.tableview.dataSource = self
         getProductList()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "WishListViewCell")
     }
     
     
@@ -44,13 +36,15 @@ class WishListViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WishListTableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WishListViewCell", for: indexPath)
+        
+        print(#function)
         
         let id = productList[indexPath.row].id
         let title = productList[indexPath.row].title
         let price = productList[indexPath.row].price
         
-        cell.textLabel?.text = "[\(id)] \(title) - \(price)$"
+        cell.textLabel?.text = "[\(id)] \(title ?? "") - \(price)$"
         
         return cell
     }
@@ -66,7 +60,8 @@ class WishListViewController: UITableViewController {
             productList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
-            deleteProductList()
+            deleteProductList(indexPath: indexPath.row)
+            print("삭제")
         }
     }
     
@@ -75,17 +70,22 @@ class WishListViewController: UITableViewController {
         guard let context = self.persistentContainer?.viewContext else { return }
         
         let request = Product.fetchRequest()
-        let productList = try? context.fetch(request)
-        self.productList = productList
+        guard let productList = try? context.fetch(request) else { return }
         
+//        for i in 0..<productList.count {
+//            self.productList[i].id = productList[i].id
+//        }
+        self.productList = productList
+        print(#function)
     }
     
-    func deleteProductList() {
+    func deleteProductList(indexPath: Int) {
         guard let context = self.persistentContainer?.viewContext else { return }
         
         let request = Product.fetchRequest()
         guard let productList = try? context.fetch(request) else { return }
-        context.delete(productList)
+               
+        context.delete(productList[indexPath])
         
         try? context.save()
     }

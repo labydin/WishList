@@ -14,9 +14,9 @@
 		9CC4BEDD2BCD260C003433EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CC4BEDC2BCD260C003433EA /* Assets.xcassets */; };
 		9CC4BEE02BCD260C003433EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CC4BEDE2BCD260C003433EA /* LaunchScreen.storyboard */; };
 		9CC4BEEC2BCD2D4D003433EA /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4BEEB2BCD2D4D003433EA /* WishListViewController.swift */; };
-		9CC4BEEF2BCD2E92003433EA /* WishListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4BEED2BCD2E92003433EA /* WishListTableViewCell.swift */; };
-		9CC4BEF02BCD2E92003433EA /* WishListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC4BEEE2BCD2E92003433EA /* WishListTableViewCell.xib */; };
 		9CC4BEF32BCD5223003433EA /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4BEF12BCD5223003433EA /* DataModel.xcdatamodeld */; };
+		9CC4BEF52BCE91C4003433EA /* RemoteProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4BEF42BCE91C4003433EA /* RemoteProduct.swift */; };
+		9CC4BEF92BCEA535003433EA /* WishListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4BEF82BCEA535003433EA /* WishListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +29,9 @@
 		9CC4BEDF2BCD260C003433EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9CC4BEE12BCD260C003433EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CC4BEEB2BCD2D4D003433EA /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
-		9CC4BEED2BCD2E92003433EA /* WishListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListTableViewCell.swift; sourceTree = "<group>"; };
-		9CC4BEEE2BCD2E92003433EA /* WishListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishListTableViewCell.xib; sourceTree = "<group>"; };
 		9CC4BEF22BCD5223003433EA /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		9CC4BEF42BCE91C4003433EA /* RemoteProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteProduct.swift; sourceTree = "<group>"; };
+		9CC4BEF82BCEA535003433EA /* WishListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,13 +68,13 @@
 				9CC4BED52BCD260C003433EA /* SceneDelegate.swift */,
 				9CC4BED72BCD260C003433EA /* ViewController.swift */,
 				9CC4BEEB2BCD2D4D003433EA /* WishListViewController.swift */,
-				9CC4BEED2BCD2E92003433EA /* WishListTableViewCell.swift */,
-				9CC4BEEE2BCD2E92003433EA /* WishListTableViewCell.xib */,
 				9CC4BEF12BCD5223003433EA /* DataModel.xcdatamodeld */,
 				9CC4BED92BCD260C003433EA /* Main.storyboard */,
 				9CC4BEDC2BCD260C003433EA /* Assets.xcassets */,
 				9CC4BEDE2BCD260C003433EA /* LaunchScreen.storyboard */,
 				9CC4BEE12BCD260C003433EA /* Info.plist */,
+				9CC4BEF42BCE91C4003433EA /* RemoteProduct.swift */,
+				9CC4BEF82BCEA535003433EA /* WishListTableViewCell.swift */,
 			);
 			path = WishList;
 			sourceTree = "<group>";
@@ -137,7 +137,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CC4BEF02BCD2E92003433EA /* WishListTableViewCell.xib in Resources */,
 				9CC4BEE02BCD260C003433EA /* LaunchScreen.storyboard in Resources */,
 				9CC4BEDD2BCD260C003433EA /* Assets.xcassets in Resources */,
 				9CC4BEDB2BCD260C003433EA /* Main.storyboard in Resources */,
@@ -153,9 +152,10 @@
 			files = (
 				9CC4BED82BCD260C003433EA /* ViewController.swift in Sources */,
 				9CC4BEEC2BCD2D4D003433EA /* WishListViewController.swift in Sources */,
-				9CC4BEEF2BCD2E92003433EA /* WishListTableViewCell.swift in Sources */,
+				9CC4BEF92BCEA535003433EA /* WishListTableViewCell.swift in Sources */,
 				9CC4BEF32BCD5223003433EA /* DataModel.xcdatamodeld in Sources */,
 				9CC4BED42BCD260C003433EA /* AppDelegate.swift in Sources */,
+				9CC4BEF52BCE91C4003433EA /* RemoteProduct.swift in Sources */,
 				9CC4BED62BCD260C003433EA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
