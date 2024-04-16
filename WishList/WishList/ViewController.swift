@@ -35,7 +35,7 @@ class ViewController: UIViewController {
                 self.productImage.image = nil
                 self.titleLabel.text = currentProduct.title
                 self.descriptionLabel.text = currentProduct.description
-                self.priceLabel.text = "\(currentProduct.price)$"
+                self.priceLabel.text = currentProduct.price.formatted(.currency(code: "USD"))
             }
             
             DispatchQueue.global().async { [weak self] in
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
         showAnotherButton.setTitleColor(.white, for: .normal)
         
         showWishListButton.layer.cornerRadius = 10
-        showWishListButton.backgroundColor = .gray
+        showWishListButton.backgroundColor = .lightGray
         showWishListButton.setTitleColor(.white, for: .normal)
     }
     

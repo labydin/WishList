@@ -42,9 +42,9 @@ class WishListViewController: UITableViewController {
         
         let id = productList[indexPath.row].id
         let title = productList[indexPath.row].title
-        let price = productList[indexPath.row].price
+        let price = productList[indexPath.row].price.formatted(.currency(code: "USD"))
         
-        cell.textLabel?.text = "[\(id)] \(title ?? "") - \(price)$"
+        cell.textLabel?.text = "[\(id)] \(title ?? "") - \(price)"
         
         return cell
     }
@@ -79,7 +79,7 @@ class WishListViewController: UITableViewController {
         print(#function)
     }
     
-    func deleteProductList(indexPath: Int) {
+    private func deleteProductList(indexPath: Int) {
         guard let context = self.persistentContainer?.viewContext else { return }
         
         let request = Product.fetchRequest()
