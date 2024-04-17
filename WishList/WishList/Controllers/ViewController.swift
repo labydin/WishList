@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var saveWishListButton: UIButton!
     @IBOutlet weak var showAnotherButton: UIButton!
@@ -52,11 +53,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUI()
+        configureUI()
         fetchRemoteProduct()
+        initRefresh()
     }
     
-    func setUI() {
+    func configureUI() {
         titleLabel.font = .boldSystemFont(ofSize: 23)
         
         saveWishListButton.layer.cornerRadius = 10
@@ -134,15 +136,21 @@ class ViewController: UIViewController {
     func initRefresh() {
         refreshControl.addTarget(self, action: #selector(refreshProduct(refresh:)), for: .valueChanged)
         refreshControl.backgroundColor = UIColor.clear
+        scrollView.addSubview(refreshControl)
     }
+    
     
     @objc func refreshProduct(refresh: UIRefreshControl) {
         print("refreshProduct")
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.fetchRemoteProduct()
-            view.reloadData()
+            self.scrollView.reloadInputViews()
             refresh.endRefreshing()
         }
     }
     
 }
+
+
+
