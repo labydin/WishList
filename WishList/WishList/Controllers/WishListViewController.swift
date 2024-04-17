@@ -26,7 +26,7 @@ class WishListViewController: UITableViewController {
 
         self.tableview.dataSource = self
         getProductList()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "WishListViewCell")
+        //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "WishListTableViewCell")
     }
     
     
@@ -36,9 +36,9 @@ class WishListViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WishListViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WishListTableViewCell", for: indexPath)
         
-        print(#function)
+        //print(#function)
         
         let id = productList[indexPath.row].id
         let title = productList[indexPath.row].title
@@ -61,7 +61,7 @@ class WishListViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
             deleteProductList(indexPath: indexPath.row)
-            print("삭제")
+            //print("삭제")
         }
     }
     
@@ -72,11 +72,8 @@ class WishListViewController: UITableViewController {
         let request = Product.fetchRequest()
         guard let productList = try? context.fetch(request) else { return }
         
-//        for i in 0..<productList.count {
-//            self.productList[i].id = productList[i].id
-//        }
         self.productList = productList
-        print(#function)
+        // print(#function)
     }
     
     private func deleteProductList(indexPath: Int) {

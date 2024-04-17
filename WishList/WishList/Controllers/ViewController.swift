@@ -26,7 +26,6 @@ class ViewController: UIViewController {
         (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     }
     
-    // currentProduct가 set되면, imageView. titleLabel, descriptionLabel, priceLabel에 각각 적절한 값을 지정합니다.
     private var currentProduct: RemoteProduct? = nil {
         didSet {
             guard let currentProduct = self.currentProduct else { return }
@@ -46,6 +45,9 @@ class ViewController: UIViewController {
         }
     }
     
+    let refreshControl = UIRefreshControl()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,16 +60,20 @@ class ViewController: UIViewController {
         titleLabel.font = .boldSystemFont(ofSize: 23)
         
         saveWishListButton.layer.cornerRadius = 10
-        saveWishListButton.backgroundColor = .green
         saveWishListButton.setTitleColor(.white, for: .normal)
+        saveWishListButton.titleLabel?.font = .boldSystemFont(ofSize: 17)
+        saveWishListButton.backgroundColor = .green
         
         showAnotherButton.layer.cornerRadius = 10
-        showAnotherButton.backgroundColor = .red
         showAnotherButton.setTitleColor(.white, for: .normal)
+        showAnotherButton.titleLabel?.font = .boldSystemFont(ofSize: 17)
+        showAnotherButton.backgroundColor = .red
         
         showWishListButton.layer.cornerRadius = 10
-        showWishListButton.backgroundColor = .lightGray
         showWishListButton.setTitleColor(.white, for: .normal)
+        showWishListButton.titleLabel?.font = .boldSystemFont(ofSize: 17)
+        showWishListButton.backgroundColor = .lightGray
+        
     }
     
     
@@ -84,9 +90,7 @@ class ViewController: UIViewController {
     @IBAction func showWishListButtonTapped(_ sender: UIButton) {
         if let wishlistVC = self.storyboard?.instantiateViewController(withIdentifier: "wishlistVC") as? WishListViewController {
             self.present(wishlistVC, animated: true, completion: nil)
-            print(#function)
-        } else {
-            print(#function)
+            //print(#function)
         }
     }
     
@@ -101,33 +105,44 @@ class ViewController: UIViewController {
         wishProduct.price = currentProduct.price
         
         try? context.save()
-        print(#function)
+        //print(#function)
     }
     
     
     private func fetchRemoteProduct() {
-            // 1 ~ 100 사이의 랜덤한 Int 숫자를 가져옵니다.
-            let productID = Int.random(in: 1 ... 100)
-            
-            // URLSession을 통해 RemoteProduct를 가져옵니다.
-            if let url = URL(string: "https://dummyjson.com/products/\(productID)") {
-                let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                    if let error = error {
-                        print("Error: \(error)")
-                    } else if let data = data {
-                        do {
-                            // product를 디코드하여, currentProduct 변수에 담습니다.
-                            self.currentProduct = try JSONDecoder().decode(RemoteProduct.self, from: data)
-                        } catch {
-                            print("Decode Error: \(error)")
-                        }
+        let productID = Int.random(in: 1 ... 100)
+        
+        // URLSession을 통해 RemoteProduct를 가져옵니다.
+        if let url = URL(string: "https://dummyjson.com/products/\(productID)") {
+            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if let error = error {
+                    print("Error: \(error)")
+                } else if let data = data {
+                    do {
+                        // product를 디코드하여, currentProduct 변수에 담습니다.
+                        self.currentProduct = try JSONDecoder().decode(RemoteProduct.self, from: data)
+                    } catch {
+                        print("Decode Error: \(error)")
                     }
                 }
-                
-                // 네트워크 요청 시작
-                task.resume()
             }
+            task.resume()
         }
-
+    }
+    
+    
+    func initRefresh() {
+        refreshControl.addTarget(self, action: #selector(refreshProduct(refresh:)), for: .valueChanged)
+        refreshControl.backgroundColor = UIColor.clear
+    }
+    
+    @objc func refreshProduct(refresh: UIRefreshControl) {
+        print("refreshProduct")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.fetchRemoteProduct()
+            view.reloadData()
+            refresh.endRefreshing()
+        }
+    }
+    
 }
-
