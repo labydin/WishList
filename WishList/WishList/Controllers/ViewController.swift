@@ -114,14 +114,12 @@ class ViewController: UIViewController {
     private func fetchRemoteProduct() {
         let productID = Int.random(in: 1 ... 100)
         
-        // URLSession을 통해 RemoteProduct를 가져옵니다.
         if let url = URL(string: "https://dummyjson.com/products/\(productID)") {
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if let error = error {
                     print("Error: \(error)")
                 } else if let data = data {
                     do {
-                        // product를 디코드하여, currentProduct 변수에 담습니다.
                         self.currentProduct = try JSONDecoder().decode(RemoteProduct.self, from: data)
                     } catch {
                         print("Decode Error: \(error)")

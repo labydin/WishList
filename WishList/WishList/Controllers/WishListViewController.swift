@@ -37,7 +37,6 @@ class WishListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WishListTableViewCell", for: indexPath)
-        
         //print(#function)
         
         let id = productList[indexPath.row].id
