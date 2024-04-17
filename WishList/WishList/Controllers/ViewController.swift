@@ -64,12 +64,12 @@ class ViewController: UIViewController {
         saveWishListButton.layer.cornerRadius = 10
         saveWishListButton.setTitleColor(.white, for: .normal)
         saveWishListButton.titleLabel?.font = .boldSystemFont(ofSize: 17)
-        saveWishListButton.backgroundColor = .green
+        saveWishListButton.backgroundColor = .systemGreen
         
         showAnotherButton.layer.cornerRadius = 10
         showAnotherButton.setTitleColor(.white, for: .normal)
         showAnotherButton.titleLabel?.font = .boldSystemFont(ofSize: 17)
-        showAnotherButton.backgroundColor = .red
+        showAnotherButton.backgroundColor = .systemRed
         
         showWishListButton.layer.cornerRadius = 10
         showWishListButton.setTitleColor(.white, for: .normal)
