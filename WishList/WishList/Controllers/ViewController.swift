@@ -141,8 +141,7 @@ class ViewController: UIViewController {
     
     
     @objc func refreshProduct(refresh: UIRefreshControl) {
-        print("refreshProduct")
-        
+        //print(#function)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.fetchRemoteProduct()
             self.scrollView.reloadInputViews()
